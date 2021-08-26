@@ -1,0 +1,17 @@
+{
+	"sprites": {
+	},
+
+	"textures": {
+	},
+	
+	"fonts": {
+		"base_text": {
+			"filename": "Inconsolata/Inconsolata-Regular.ttf",
+			"size": 16
+		}
+	},
+
+	"sounds": {
+	}
+}
