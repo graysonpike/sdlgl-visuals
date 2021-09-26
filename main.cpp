@@ -11,6 +11,9 @@
 
 #include <sdlgl/ui/fps_display.h>
 #include <sdlgl/ui/entity_count.h>
+#include <sdlgl/utilities/noise.h>
+
+#include "entities/grid.h"
 
 
 #define KEY_TOGGLE_DEBUG_VISUALS SDL_SCANCODE_GRAVE // Tilde
@@ -42,7 +45,9 @@ int main() {
 
     srand(time(NULL));
 
-    SimpleContext context(new Graphics(640, 480), new Inputs(), new Clock());
+    PerlinNoise::init();
+
+    SimpleContext context(new Graphics(1920, 1080), new Inputs(), new Clock());
 
     // Load resources
     context.graphics->get_resources()->load_resources("resources.json");
@@ -55,6 +60,8 @@ int main() {
         context.scene, "base_text", {0, 0, 0, 255}));
     context.scene->add_entity(new EntityCount(
         context.scene, "base_text", {0, 0, 0, 255}));
+
+    context.scene->add_entity(new Grid(context.scene, -160, 120, 1600, 900, 50));
 
     while (*context.loop) {
 

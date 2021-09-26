@@ -3,6 +3,7 @@
 	},
 
 	"textures": {
+		"tile": { "filename": "tile_blue_alpha.png" }
 	},
 	
 	"fonts": {
