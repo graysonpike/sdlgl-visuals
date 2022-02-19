@@ -32,6 +32,10 @@ void game_loop(SimpleContext context) {
         context.graphics->toggle_debug_visuals();
     }
 
+    if (context.inputs->is_key_down_event(SDL_SCANCODE_SPACE)) {
+        context.graphics->capture_bmp("screenshot.bmp");
+    }
+
     if (context.inputs->get_quit()) {
         *context.loop = false;
     }
@@ -61,7 +65,7 @@ int main() {
     context.scene->add_entity(new EntityCount(
         context.scene, "base_text", {0, 0, 0, 255}));
 
-    context.scene->add_entity(new Grid(context.scene, -160, 120, 1600, 900, 50));
+    context.scene->add_entity(new Grid(context.scene, -160, 120, 30*32, 30*16, 30));
 
     while (*context.loop) {
 
