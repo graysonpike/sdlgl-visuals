@@ -4,6 +4,8 @@ A project for testing artistic visualizations using my library, SDLGL.
 
 Currently, I have implemented only one visualizaton, an isometric grid of cubes that move in "waves" defined by a Perlin noise function.
 
+![Perlin noise waves](screenshots/waves.gif)
+
 
 ## Building
 
